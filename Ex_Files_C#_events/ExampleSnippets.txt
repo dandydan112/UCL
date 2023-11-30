@@ -1,0 +1,198 @@
+// Example Code snippets for C# Delegates, Events, and Lambdas
+//
+// Use this file in conjunction with the Lynda.com course 
+//
+
+***************************************
+** DELEGATES
+***************************************
+
+--- BASIC DELEGATES ---
+1
+    // declare the delegate type
+    public delegate string MyDelegate(int arg1, int arg2);
+
+2
+        static string func1(int a, int b)
+        {
+            return (a + b).ToString();
+        }
+        static string func2(int a, int b)
+        {
+            return (a * b).ToString();
+        }
+
+3
+            MyDelegate f = func1;
+            Console.WriteLine("The number is: " + f(10, 20));
+            f = func2;
+            Console.WriteLine("The number is: " + f(10, 20));
+
+4
+    class MyClass
+    {
+        // Delegates can be bound to instance members as well as
+        // static class functions
+        public string instanceMethod1(int arg1, int arg2)
+        {
+            return ((arg1 + arg2) * arg1).ToString();
+        }
+    }
+
+5
+            MyClass mc = new MyClass();
+            f = mc.instanceMethod1;
+            Console.WriteLine("The number is: " + f(10, 20));
+
+
+--- ANONYMOUS DELEGATES ---
+
+            MyDelegate f = delegate(int arg1, int arg2) {
+                return (arg1 + arg2).ToString();
+            };
+            Console.WriteLine("The number is: " + f(10,20));
+
+
+--- COMPOSABLE DELEGATES ---
+1
+            MyDelegate f1 = func1;
+            MyDelegate f2 = func2;
+            MyDelegate f1f2 = f1 + f2;
+
+            // call each delegate and then the chain
+            Console.WriteLine("Calling the first delegate");
+            f1(10, 20);
+            Console.WriteLine("Calling the second delegate");
+            f2(10, 20);
+            Console.WriteLine("\nCalling the chained delegates");
+            f1f2(10, 20);
+
+2
+            // subtract off one of the delegates
+            Console.WriteLine("\nCalling the unchained delegates");
+            f1f2 -= f1;
+            f1f2(20, 20);
+
+--- COMPOSABLE DELEGATES WITH REFERENCES ---
+
+        static void func1(int arg1, ref int arg2)
+        {
+            string result = (arg1 + arg2).ToString();
+            arg2 += 20; // arg2 is a ref parameter, so this will change it
+            Console.WriteLine("The number is: " + result);
+        }
+        static void func2(int arg1, ref int arg2)
+        {
+            string result = (arg1 * arg2).ToString();
+            Console.WriteLine("The number is: " + result);
+        }
+
+
+***************************************
+** EVENTS
+***************************************
+
+--- BASIC EVENTS ---
+1
+    class EventPublisher
+    {
+        private string theVal;
+
+        // declare the event
+        public event myEventHandler valueChanged;
+
+        public string Val
+        {
+            set
+            {
+                this.theVal = value;
+                // when the value changes, fire the event
+                this.valueChanged(theVal);
+            }
+        }
+    }
+
+2
+        static void obj_valueChanged(string value)
+        {
+            Console.WriteLine("The value changed to {0}", value);
+        }
+
+3
+            // use a named function as an event handler
+            EventPublisher obj = new EventPublisher();
+            obj.valueChanged += obj_valueChanged;
+
+4
+            // use an anonymous delegate as an event handler
+            obj.valueChanged += delegate(string val) {
+                Console.WriteLine("The value changed to {0}", val);
+            };
+
+--- CHAINED EVENTS ---
+
+            // Connect multiple event handlers
+            obj.valueChanged += changeListener1;
+            obj.valueChanged += changeListener2;
+
+            // Use an anonymous delegate as the event handler
+            obj.valueChanged += delegate(string s) {
+                Console.WriteLine("This came from the anonymous handler!");
+            };
+
+
+--- USING THE .NET EVENTARGS CLASS --
+
+1
+    class ObjChangeEventArgs : EventArgs
+    {
+        public string propChanged;
+    }
+
+2
+        public event EventHandler<ObjChangeEventArgs> objChanged;
+
+3
+                this.objChanged(this, new ObjChangeEventArgs() { propChanged = "Val" });
+
+4
+            obj.objChanged += delegate(object sender, ObjChangeEventArgs e) {
+                Console.WriteLine("{0} had the '{1}' property changed", sender.GetType(), e.propChanged);
+            };
+
+
+***************************************
+** LAMBDA FUNCTIONS
+***************************************
+
+--- BASIC LAMBDAS ---
+1
+            // Create a basic delegate that squares a number
+            MyDelegate foo = (x) => x * x;
+            Console.WriteLine("The result of foo is: {0}", foo(5));
+
+            // Dynamically change the delegate to something else
+            foo = (x) => x * 10;
+            Console.WriteLine("The result of bar is: {0}", foo(5));
+
+2			
+            // Create a delegate that takes multiple arguments
+            MyDelegate2 bar = (x, y) => {
+                Console.WriteLine("The two-arg lambda: {1}, {0}", x * 10, y);
+            };
+			bar(25, "Some string");
+
+            // Define an expression delegate
+            ExprDelegate baz = (x) => x > 10;
+            Console.WriteLine("Calling baz with 5: {0}", baz(5));
+            Console.WriteLine("Calling bax with 15: {0}", baz(15));
+
+
+--- LAMBDAS AS DELEGATES ---
+
+            // Use a Lambda expression to define an event handler
+            // Note that this is a statement lambda, due to use of { }
+            obj.valueChanged += (x) => {
+                Console.WriteLine("The value changed to {0}", x);
+            };
+

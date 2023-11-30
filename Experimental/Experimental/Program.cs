@@ -1,25 +1,27 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Experimental
 {
     internal class Program
     {
 
-        static void MyMethod(string penis, int age)
-        {
-            Console.WriteLine(penis + " " + "Nguyen " + age);
-        }
+        
 
 
         static void Main(string[] args)
         {
 
+            int a = 2; 
+            int b = 3;
 
-
-            MyMethod("dan",5);
-            MyMethod("lasse",100);
-
+            static void PIK(int arg1,int arg2)
+            {
+                Console.WriteLine(arg1 + arg2);
+            }
+            PIK(a,b);
+           
             Console.ReadLine();
 
         }
