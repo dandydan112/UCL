@@ -1,0 +1,26 @@
+﻿<Window x:Class="TusindfrydWPF.CreateFlowerSortDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TusindfrydWPF"
+        mc:Ignorable="d"
+        Title="CreateFlowerSortDialog" Height="400" Width="400">
+    <Grid>
+        <Label Content="Navn:" HorizontalAlignment="Left" Margin="42,39,0,0" VerticalAlignment="Top"/>
+        <Label Content="Billede (sti):" HorizontalAlignment="Left" Margin="42,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Produktionstid:" HorizontalAlignment="Left" Margin="42,212,0,0" VerticalAlignment="Top"/>
+        <Label Content="Halveringstid:" HorizontalAlignment="Left" Margin="42,256,0,0" VerticalAlignment="Top"/>
+        <Label Content="Størrelse" HorizontalAlignment="Left" Margin="42,302,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbStørrelse" HorizontalAlignment="Left" Margin="135,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" TextChanged="txbStørrelse_TextChanged"/>
+        <Button x:Name="btnOk" Content="Ok" HorizontalAlignment="Left" Margin="200,344,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.085,0.002" Width="68" Click="btnOk_Click"/>
+        <Button Content="Fortryd" HorizontalAlignment="Left" Margin="292,344,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.085,0.002" Width="68" Click="Button_Click"/>
+        <TextBox x:Name="txbHalveringstid" HorizontalAlignment="Left" Margin="135,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" TextChanged="txbHalveringstid_TextChanged"/>
+        <TextBox x:Name="txbProduktionstid" HorizontalAlignment="Left" Margin="135,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" TextChanged="txbProduktionstid_TextChanged"/>
+        <TextBox x:Name="txbNavn" HorizontalAlignment="Left" Margin="135,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" TextChanged="txbNavn_TextChanged"/>
+        <TextBox x:Name="txbBillede" HorizontalAlignment="Left" Margin="135,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" LostFocus="txbBillede_LostFocus" TextChanged="txbBillede_TextChanged"/>
+        <Image x:Name="imgBillede" HorizontalAlignment="Left" Height="85" Margin="135,119,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="101,344,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.085,0.002" Width="68" Click="btnUpdate_Click"/>
+
+    </Grid>
+</Window>

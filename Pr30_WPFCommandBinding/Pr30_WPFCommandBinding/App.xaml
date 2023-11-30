@@ -1,0 +1,9 @@
+﻿<Application x:Class="Pr30_WPFCommandBinding.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Pr30_WPFCommandBinding"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

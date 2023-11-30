@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPFSimpleGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFSimpleGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="500">
+    <Grid>
+        <Label Content="1" HorizontalAlignment="Left" Margin="40,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="2" HorizontalAlignment="Left" Margin="40,107,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.769,2.618"/>
+        <Label Content="3" HorizontalAlignment="Left" Margin="40,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.931,-0.312"/>
+        <Label Content="4" HorizontalAlignment="Left" Margin="40,236,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbLine1" HorizontalAlignment="Left" Margin="104,54,0,0" TextWrapping="Wrap" Text="Line 1" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="tbLine2" HorizontalAlignment="Left" Margin="104,115,0,0" TextWrapping="Wrap" Text="Line 2" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbLine3" HorizontalAlignment="Left" Margin="104,175,0,0" TextWrapping="Wrap" Text="Line 3" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbLine4" HorizontalAlignment="Left" Margin="104,240,0,0" TextWrapping="Wrap" Text="Line 4" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnScrollUp" Content="Scroll Up" HorizontalAlignment="Left" Margin="296,80,0,0" VerticalAlignment="Top" Click="btnScrollUp_Click"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="296,149,0,0" VerticalAlignment="Top" Click="btnClear_Click"/>
+        <Button x:Name="btnScrollDown" Content="Scroll Down" HorizontalAlignment="Left" Margin="296,208,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.784,-0.279" Click="btnScrollDown_Click"/>
+
+    </Grid>
+</Window>
