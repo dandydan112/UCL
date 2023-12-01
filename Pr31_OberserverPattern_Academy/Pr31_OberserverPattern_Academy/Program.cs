@@ -17,15 +17,16 @@ namespace Pr31_OberserverPattern_Academy.ConcreteSubjects
 
             Student s3 = new Student(p, "Susan");
 
-            p.Attach(s1);
+            p.MessageChanged+=s1.Update;
 
-            p.Attach(s2);
+            p.MessageChanged += s2.Update;
+            p.MessageChanged = null;
 
-            p.Attach(s3);
+            p.MessageChanged += s3.Update;
 
             p.Message = "Så er der julefrokost!";
 
-            p.Detach(s2);
+            p.MessageChanged -= s2.Update;
 
             p.Message = "Så er der fredagsbar!";
 

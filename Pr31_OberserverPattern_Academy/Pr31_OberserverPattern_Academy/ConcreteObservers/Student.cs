@@ -9,7 +9,7 @@ using Pr31_OberserverPattern_Academy.Observers;
 
 namespace Pr31_OberserverPattern_Academy.ConcreteObservers
 {
-    internal class Student : Person, IObserver
+    internal class Student : Person
     {
         private Academy academy { get; set; }
 
@@ -22,7 +22,7 @@ namespace Pr31_OberserverPattern_Academy.ConcreteObservers
             {
                 message = value;
                 Console.WriteLine($"Studerende {Name} modtog nyheden '{Message}' fra Akademiet {academy.Name}");
-
+                
             }
         }
 

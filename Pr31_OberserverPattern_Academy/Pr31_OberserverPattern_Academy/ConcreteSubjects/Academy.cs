@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,14 @@ using Pr31_OberserverPattern_Academy.Subjects;
 
 namespace Pr31_OberserverPattern_Academy.ConcreteSubjects
 {
-    public class Academy : Organization, ISubject
+    public delegate void NotifyHandler();
+    public class Academy : Organization
     {
+        public NotifyHandler MessageChanged;
+      
+
+
+
 
 
         private string message;
@@ -20,7 +27,7 @@ namespace Pr31_OberserverPattern_Academy.ConcreteSubjects
             set
             {
                 message = value;
-                Notify();
+                MessageChanged();
             }
         }
     
@@ -32,23 +39,16 @@ namespace Pr31_OberserverPattern_Academy.ConcreteSubjects
         }
 
 
-        private List<IObserver> observers = new List<IObserver>();
-        public void Attach(IObserver o)
-        {
-            observers.Add(o);
-        }
+        //private List<IObserver> observers = new List<IObserver>();
 
-        public void Detach(IObserver o)
-        {
-            observers.Remove(o);
-        }
+        
+        
 
-        public void Notify()
+        
+
+        public void OnMessageChanged()
         {
-            foreach (IObserver o in observers)
-            {
-                o.Update();
-            }
+            MessageChanged();
         }
     }
 }
