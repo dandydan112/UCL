@@ -19,15 +19,7 @@ namespace Pr33_Delegates.docx_BonusApp
             return result;
         }
 
-        BonusProvider calc1;
-        BonusProvider calc2;
-
-        public Bonuses()
-        {
-            
-            calc1 = new BonusProvider(TenPercent);
-            calc2 = new BonusProvider(FlatTwoIfAmountMoreThanFive);
-        }
+        
 
         public static double FlatTwoIfAmountMoreThanFive(double amount)
         {

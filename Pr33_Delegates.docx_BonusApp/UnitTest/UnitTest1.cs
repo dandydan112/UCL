@@ -35,7 +35,7 @@ namespace UnitTest
         [TestMethod]
         public void GetBonus_Test()
         {
-            order.Bonus = Bonuses.TenPercent;
+            order.Bonus = Bonuses.TenPercent; // new BonusProvider(Bonuses.TenPercent)
             Assert.AreEqual(4.5, order.GetBonus());
 
             order.Bonus = Bonuses.FlatTwoIfAmountMoreThanFive;
