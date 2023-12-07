@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -11,14 +12,10 @@ using Pr31_OberserverPattern_Academy.Subjects;
 namespace Pr31_OberserverPattern_Academy.ConcreteSubjects
 {
     public delegate void NotifyHandler();
-    public class Academy : Organization
+    public class Academy : Organization, INotifyPropertyChanged
     {
-        public NotifyHandler MessageChanged;
-      
 
-
-
-
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private string message;
         public string Message
@@ -27,11 +24,9 @@ namespace Pr31_OberserverPattern_Academy.ConcreteSubjects
             set
             {
                 message = value;
-                MessageChanged();
+                PropertyChanged(this, null);
             }
         }
-    
-
 
         public Academy(string name, string address) : base(name)
         {
@@ -41,14 +36,11 @@ namespace Pr31_OberserverPattern_Academy.ConcreteSubjects
 
         //private List<IObserver> observers = new List<IObserver>();
 
-        
-        
 
-        
-
-        public void OnMessageChanged()
+        public void OnMessageChanged(object sender, EventArgs e)
         {
-            MessageChanged();
+            PropertyChanged(this, null);
+
         }
     }
 }

@@ -9,9 +9,9 @@ using Pr31_OberserverPattern_Academy.Observers;
 
 namespace Pr31_OberserverPattern_Academy.ConcreteObservers
 {
-    internal class Student : Person
+    internal class Student : Person, IObserver
     {
-        private Academy academy { get; set; }
+        //private Academy academy { get; set; }
 
         private string message;
 
@@ -21,23 +21,22 @@ namespace Pr31_OberserverPattern_Academy.ConcreteObservers
             set
             {
                 message = value;
-                Console.WriteLine($"Studerende {Name} modtog nyheden '{Message}' fra Akademiet {academy.Name}");
-                
+
             }
         }
 
 
 
-        public Student(Academy academy, string name) : base(name)
+        public Student(string name) : base(name)
         {
-            this.academy = academy;
         }
 
-        public void Update()
+        public void Update(object sender, EventArgs e)
         {
-            {
-                Message = academy.Message;
-            }
+
+            Message = (sender as Academy).Message;
+            Console.WriteLine($"Studerende {Name} modtog nyheden '{Message}' fra Akademiet {(sender as Academy).Name}");
+
         }
     }
 }

@@ -8,6 +8,6 @@ namespace Pr31_OberserverPattern_Academy.Interfaces
 {
     public interface IObserver
     {
-        public void Update();
+        public void Update(object sender, EventArgs e);
     }
 }
