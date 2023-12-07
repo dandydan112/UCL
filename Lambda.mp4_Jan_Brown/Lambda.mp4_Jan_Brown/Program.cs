@@ -9,10 +9,10 @@
             MyDelegate del;
             MyDelegate del1;
 
-            del = delegate (int x, int y, int z)
-            {
-                return x+y+z;
-            };
+            //del = delegate (int x, int y, int z)
+            //{
+            //    return x+y+z;
+            //};
 
             del1 = (x, y, z) => x + y + z;    
             int pik = del1(1, 1, 1);
@@ -20,7 +20,7 @@
 
             Console.WriteLine(pik);
 
-
+            Console.ReadLine();
 
         }
 
