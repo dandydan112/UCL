@@ -6,24 +6,22 @@ namespace Experimental
 {
     internal class Program
     {
+        public delegate int MyDelegate(int a, int b);
 
-        
+
 
 
         static void Main(string[] args)
         {
-
-            int a = 2; 
-            int b = 3;
-
-            static void PIK(int arg1,int arg2)
-            {
-                Console.WriteLine(arg1 + arg2);
-            }
-            PIK(a,b);
-           
+            Func<int, int, int> Addition = AddNumbers;
+            int result = Addition(10, 20);
+            Console.WriteLine($"Addition = {result}");
             Console.ReadLine();
+        }
 
+        private static int AddNumbers(int param1, int param2)
+        {           
+            return param1 + param2;
         }
     }
 }
