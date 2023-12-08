@@ -1,6 +1,5 @@
-using Pr33_Delegates.docx_BonusApp;
-
-namespace UnitTest
+using BonusApp;
+namespace TestProject1
 {
     [TestClass]
     public class UnitTest1
@@ -35,7 +34,7 @@ namespace UnitTest
         //[TestMethod]
         //public void GetBonus_Test()
         //{
-        //    order.Bonus = Bonuses.TenPercent; // new BonusProvider(Bonuses.TenPercent)
+        //    order.Bonus = Bonuses.TenPercent;
         //    Assert.AreEqual(4.5, order.GetBonus());
 
         //    order.Bonus = Bonuses.FlatTwoIfAmountMoreThanFive;
@@ -50,54 +49,48 @@ namespace UnitTest
         //    order.Bonus = Bonuses.FlatTwoIfAmountMoreThanFive;
         //    Assert.AreEqual(43.0, order.GetTotalPrice());
         //}
-
         //[TestMethod]
 
         //public void GetBonusAnonymous_Test()
 
         //{
 
-        //    order.Bonus = Bonuses.bp // <- Change to anonymous method
+        //    order.Bonus = Bonuses.pik; // <- Change to anonymous method
 
         //    Assert.AreEqual(4.5, order.GetBonus());
 
-        //    order.Bonus = Bonuses.bp; // <- Change to anonymous method
+        //    order.Bonus = Bonuses.pik2; // <- Change to anonymous method
 
         //    Assert.AreEqual(2.0, order.GetBonus());
 
         //}
 
-        //[TestMethod]
+        [TestMethod]
 
-        //public void GetBonusLambda_Test()
+        public void GetBonusLambda_Test()
 
-        //{
+        {
 
-        //    order.Bonus = Bonuses.bp3; // <- Change to lambda expression
+            order.Bonus = Bonuses.ts; // <- Change to lambda expression
 
-        //    Assert.AreEqual(4.5, order.GetBonus());
+            Assert.AreEqual(4.5, order.GetBonus(bonus => 0.1*bonus));
 
-        //    order.Bonus = Bonuses.bp4; // <- Change to lambda expression
+            order.Bonus = Bonuses.ts2; // <- Change to lambda expression
 
-        //    Assert.AreEqual(2.0, order.GetBonus());
+            Assert.AreEqual(2.0, order.GetBonus((ts) =>
+            {
+                if (ts > 5)
+                {
+                    return 2;
+                }
+                else
+                {
+                    return 0;
+                }
 
-        //}
+            }));
 
-        //[TestMethod]
-
-        //public void GetBonusByLambdaParameter_Test()
-
-        //{
-
-        //    // Use TenPercent lambda expresssion as parameter to GetBonus
-
-        //    Assert.AreEqual(4.5, order.GetBonus(Bonuses.bp3));
-
-        //    // Use FlatTwoIfAmountMoreThanFive lambda expresssion as parameter to GetBonus
-
-        //    Assert.AreEqual(2.0, order.GetBonus(Bonuses.bp4));
-
-        //}
+        }
 
         [TestMethod]
 
@@ -105,13 +98,22 @@ namespace UnitTest
 
         {
 
-            Assert.AreEqual(40.5, order.GetTotalPrice(Bonuses.bp5));
+            Assert.AreEqual(40.5, order.GetTotalPrice(bonus => 0.1 * bonus));
 
-            Assert.AreEqual(43.0, order.GetTotalPrice(Bonuses.bp6));
+            Assert.AreEqual(43.0, order.GetTotalPrice(ts =>
+            {
+                if (ts > 5)
+                {
+                    return 2;
+                }
+                else
+                {
+                    return 0;
+                }
+
+            }));
 
         }
-
-
     }
 
 }

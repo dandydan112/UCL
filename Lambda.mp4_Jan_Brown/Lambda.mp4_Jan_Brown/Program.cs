@@ -15,7 +15,7 @@
             };
 
             del1 = (x, y, z) => x + y + z;    
-            int pik = del1(1, 1, 1);
+            int pik = del(1, 1, 1);
 
 
             Console.WriteLine(pik);

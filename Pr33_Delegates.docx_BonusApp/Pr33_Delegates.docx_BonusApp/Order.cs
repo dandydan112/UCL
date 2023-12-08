@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,13 +32,32 @@ namespace Pr33_Delegates.docx_BonusApp
 
         public double GetBonus()
         {
-            return Bonus(GetValueOfProducts());
+            double result = Bonus(GetValueOfProducts());
+            return result;
         }
+
+        public double GetBonus(BonusProvider arg)
+        {
+            return arg(GetValueOfProducts());
+        }
+
+        
+
+        
+
 
         public double GetTotalPrice()
         {
             return GetValueOfProducts() - GetBonus();
         }
+
+        
+        public double GetTotalPrice(BonusProvider arg)
+        {
+            return arg(GetValueOfProducts()) - arg(GetBonus());
+        }
+
+
 
     }
 }

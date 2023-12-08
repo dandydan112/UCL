@@ -10,20 +10,67 @@ namespace Pr33_Delegates.docx_BonusApp
 
     public class Bonuses
     {
-        public static double TenPercent(double amount)
+
+
+
+        //public static BonusProvider bp3 = arg =>
+        //{
+        //    double result;
+
+        //    result = arg / 10;
+
+        //    return result;
+        //};
+
+        //public static BonusProvider bp4 = arg =>
+        //{
+        //    if (arg > 5)
+        //    {
+        //        return 2;
+        //    }
+        //    else
+        //    {
+        //        return 0;
+        //    }
+        //};
+
+
+
+
+
+        //public static BonusProvider bp = delegate (double arg)
+        //{
+        //    double result;
+
+        //    result = arg / 10;
+
+        //    return result;
+        //};
+
+        //public static BonusProvider bp2 = delegate (double arg)
+        //{
+        //if (arg > 5)
+        //{
+        //    return 2;
+        //}
+        //else
+        //{
+        //    return 0;
+        //}
+        //};
+
+        public static Func<double, double> bp5 = (arg) =>
         {
             double result;
 
-            result = amount / 10;
+            result = arg / 10;
 
             return result;
-        }
+        };
 
-        
-
-        public static double FlatTwoIfAmountMoreThanFive(double amount)
+        public static Func<double, double> bp6 = (arg) =>
         {
-            if (amount > 5)
+            if (arg > 5)
             {
                 return 2;
             }
@@ -31,7 +78,34 @@ namespace Pr33_Delegates.docx_BonusApp
             {
                 return 0;
             }
-        }
+        };
+
+
+
+
+
+        //public static double TenPercent(double amount)
+        //{
+        //    double result;
+
+        //    result = amount / 10;
+
+        //    return result;
+        //}
+
+
+
+        //public static double FlatTwoIfAmountMoreThanFive(double amount)
+        //{
+        //    if (amount > 5)
+        //    {
+        //        return 2;
+        //    }
+        //    else
+        //    {
+        //        return 0;
+        //    }
+        //}
 
 
     }
