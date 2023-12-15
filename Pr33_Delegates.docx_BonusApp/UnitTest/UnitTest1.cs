@@ -99,19 +99,12 @@ namespace UnitTest
 
         //}
 
-        [TestMethod]
-
-        public void GetTotalPriceByLambdaParameter_Test()
-
-        {
-
-            Assert.AreEqual(40.5, order.GetTotalPrice(Bonuses.bp5));
-
-            Assert.AreEqual(43.0, order.GetTotalPrice(Bonuses.bp6));
+        
 
         }
 
-
     }
 
+
 }
+

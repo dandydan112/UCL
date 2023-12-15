@@ -13,26 +13,26 @@ namespace Pr33_Delegates.docx_BonusApp
 
 
 
-        //public static BonusProvider bp3 = arg =>
-        //{
-        //    double result;
+        public static BonusProvider bp3 = arg =>
+        {
+            double result;
 
-        //    result = arg / 10;
+            result = arg / 10;
 
-        //    return result;
-        //};
+            return result;
+        };
 
-        //public static BonusProvider bp4 = arg =>
-        //{
-        //    if (arg > 5)
-        //    {
-        //        return 2;
-        //    }
-        //    else
-        //    {
-        //        return 0;
-        //    }
-        //};
+        public static BonusProvider bp4 = arg =>
+        {
+            if (arg > 5)
+            {
+                return 2;
+            }
+            else
+            {
+                return 0;
+            }
+        };
 
 
 
