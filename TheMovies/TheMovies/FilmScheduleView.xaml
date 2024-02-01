@@ -1,0 +1,18 @@
+﻿<Window x:Class="TheMovies.FilmScheduleView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Film Schedule" Height="450" Width="800">
+    <Grid>
+        <ListView ItemsSource="{Binding Films}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" />
+                    <GridViewColumn Header="Genre" DisplayMemberBinding="{Binding Genre}" />
+                    <GridViewColumn Header="Duration" DisplayMemberBinding="{Binding Duration}" />
+                    <GridViewColumn Header="Director" DisplayMemberBinding="{Binding Director}" />
+                    <GridViewColumn Header="Premiere" DisplayMemberBinding="{Binding PremiereDate}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
