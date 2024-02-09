@@ -4,11 +4,17 @@ using System.IO;
 using System.Windows;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Win32;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace SimpleCsvEditor
 {
+
+
     public partial class MainWindow : Window
     {
+
+
         private DataTable dataTable = new DataTable();
 
         public MainWindow()
