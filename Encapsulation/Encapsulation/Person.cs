@@ -3,45 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System;
 
-namespace Encapsulation
+public class Person
 {
-    public class Person
+    private string name;
+    private int age;
+
+    public Person(string name, int age)
     {
-        private string name;
-        private int age;
+        this.name = name;
+        this.age = age;
+    }
 
-        public Person(string name)
+    // Getter method for name
+    public string GetName()
+    {
+        return name;
+    }
+
+    // Setter method for name
+    public void SetName(string newName)
+    {
+        name = newName;
+    }
+
+    // Getter method for age
+    private int GetAge()
+    {
+        return age;
+    }
+
+    // Setter method for age
+    public void SetAge(int newAge)
+    {
+        if (newAge >= 0)
         {
-            this.name = name;
+            age = newAge;
         }
-
-        public void SetAge(int age)
+        else
         {
-            if (age >= 0)
-            {
-                this.age = age;
-            }
-            else
-            {
-                this.age = -1;
-            }
-
-
-        }
-        public int GetAge()
-        {
-            return age;
-        }
-        
-
-        public string PikkeTitel()
-        {
-            string result;
-
-            result = name + ": " + age + " år gammel.";
-
-            return result;
+            Console.WriteLine("Age cannot be negative.");
         }
     }
 }
+

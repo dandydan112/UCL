@@ -4,25 +4,20 @@
     {
         static void Main(string[] args)
         {
+            // Create a new Person object
+            Person person = new Person("John", 30);
 
-            Person P;
+            // Accessing private fields indirectly using public methods
+            Console.WriteLine($"Name: {person.GetName()}, Age: {person.GetAge()}");
 
-            P = new Person("Dan");
+            // Modifying private fields indirectly using public methods
+            person.SetName("Alice");
+            person.SetAge(25);
 
-            P.SetAge(30);
-
-
-
-            P.SetAge(P.GetAge() + 1);
-
-            string title = P.PikkeTitel();
-
-            Console.WriteLine(title);
-
-           
+            // Accessing modified private fields
+            Console.WriteLine($"Name: {person.GetName()}, Age: {person.GetAge()}");
 
             Console.ReadLine();
-
         }
     }
 }
