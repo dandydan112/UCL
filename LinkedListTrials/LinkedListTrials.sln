@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedListConsole", "LinkedListConsole\LinkedListConsole.csproj", "{88A26EAC-B751-4F7E-9E2C-BF212D82BE5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADT", "ADT\ADT.csproj", "{60B5F396-F9EE-4699-B842-B35530FCB3CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88A26EAC-B751-4F7E-9E2C-BF212D82BE5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A26EAC-B751-4F7E-9E2C-BF212D82BE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A26EAC-B751-4F7E-9E2C-BF212D82BE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A26EAC-B751-4F7E-9E2C-BF212D82BE5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B5F396-F9EE-4699-B842-B35530FCB3CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B5F396-F9EE-4699-B842-B35530FCB3CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B5F396-F9EE-4699-B842-B35530FCB3CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B5F396-F9EE-4699-B842-B35530FCB3CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85F4F199-59D0-4CE5-9739-8C319A580102}
+	EndGlobalSection
+EndGlobal

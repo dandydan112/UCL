@@ -1,0 +1,49 @@
+﻿<Window x:Class="ThreadsInWPF.Code.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ThreadsInWPF.Code"
+        mc:Ignorable="d"
+        Title="Juice Factory" Height="450" Width="800">
+    <Grid>
+        <Label Content="Fruit Casket:" HorizontalAlignment="Left" Margin="28,28,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbFruits" HorizontalAlignment="Left" Height="259" Margin="28,54,0,0" VerticalAlignment="Top" Width="116">
+            <ListBoxItem>Apple</ListBoxItem>
+            <ListBoxItem>Pear</ListBoxItem>
+            <ListBoxItem>Banana</ListBoxItem>
+            <ListBoxItem>Mango</ListBoxItem>
+            <ListBoxItem>Orange</ListBoxItem>
+            <ListBoxItem>Grape</ListBoxItem>
+            <ListBoxItem>Peach</ListBoxItem>
+            <ListBoxItem>Cherry</ListBoxItem>
+            <ListBoxItem>Strawberry</ListBoxItem>
+            <ListBoxItem>Plum</ListBoxItem>
+            <ListBoxItem>Blackberry</ListBoxItem>
+            <ListBoxItem>Raspberry</ListBoxItem>
+            <ListBoxItem>Pineapple</ListBoxItem>
+            <ListBoxItem>Kiwi</ListBoxItem>
+        </ListBox>
+        <!-- -->
+        <Button x:Name="btnPutIn1" Content="Put in 1" HorizontalAlignment="Left" Height="24" Margin="170,87,0,0" VerticalAlignment="Top" Width="64" Click="BtnPutIn1_Click"/>
+        <Label Content="Blender 1:" HorizontalAlignment="Left" Margin="274,25,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbBlender1" HorizontalAlignment="Left" Height="95" Margin="274,51,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="btnBlend1" Content="Blend 1" HorizontalAlignment="Left" Margin="402,87,0,0" VerticalAlignment="Top" Width="81" Height="24" Click="BtnBlend1_Click"/>
+
+        <!-- -->
+        <Button x:Name="btnPutIn2" Content="Put in 2" HorizontalAlignment="Left" Margin="170,250,0,0" VerticalAlignment="Top" Width="64" Click="BtnPutIn2_Click" Height="24"/>
+        <Label Content="Blender 2:" HorizontalAlignment="Left" Margin="274,189,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbBlender2" HorizontalAlignment="Left" Height="95" Margin="274,215,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="btnBlend2" Content="Blend 2" HorizontalAlignment="Left" Height="24" Margin="402,250,0,0" VerticalAlignment="Top" Width="81" Click="BtnBlend2_Click"/>
+
+        <Button x:Name="btnClean1" Content="Clean 1" HorizontalAlignment="Left" Margin="524,131,0,0" VerticalAlignment="Top" Click="btnClean1_Click"/>
+        <Button x:Name="btnClean2" Content="Clean 2" HorizontalAlignment="Left" Margin="526,293,0,0" VerticalAlignment="Top" Click="btnClean2_Click"/>
+        <Button x:Name="btnStop2" Content="Stop2" HorizontalAlignment="Left" Margin="299,329,0,0" VerticalAlignment="Top" Click="btnStop2_Click"/>
+        <Button x:Name="btnStop1" Content="Stop1" HorizontalAlignment="Left" Margin="299,151,0,0" VerticalAlignment="Top" Click="btnStop1_Click"/>
+        <ProgressBar x:Name="pb1" Minimum="0" Maximum="100" HorizontalAlignment="Left" Height="24" Margin="506,87,0,0" VerticalAlignment="Top" Width="82"/>
+        <ProgressBar x:Name="pb2" Minimum="0" Maximum="100" HorizontalAlignment="Left" Height="22" Margin="508,252,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="lblStatus2" Content="Cleaned" HorizontalAlignment="Left" Margin="508,250,0,0" VerticalAlignment="Top" Width="80" Background="{x:Null}" Height="24"/>
+        <Label x:Name="lblStatus1" Content="Cleaned" HorizontalAlignment="Left" Margin="506,87,0,0" VerticalAlignment="Top" Width="80" Background="{x:Null}" Height="24"/>
+
+    </Grid>
+</Window>
