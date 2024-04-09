@@ -12,11 +12,13 @@ namespace MVVM
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+
             base.OnStartup(e);
             MVVM.MainWindow window = new MainWindow();
             UserViewModel VM = new UserViewModel();
             window.DataContext = VM;
             window.Show();
+
         }
     }
 
