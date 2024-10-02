@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoonZone", "GoonZone\GoonZone.csproj", "{675F9A02-BD1C-4BE4-A3E1-615B1A37A04E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{675F9A02-BD1C-4BE4-A3E1-615B1A37A04E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675F9A02-BD1C-4BE4-A3E1-615B1A37A04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675F9A02-BD1C-4BE4-A3E1-615B1A37A04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675F9A02-BD1C-4BE4-A3E1-615B1A37A04E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66A04593-A7E5-478A-9113-B02E6C5D1D77}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+﻿@model SurfsUpDan.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking Confirmation";
+}
+
+<div class="container">
+    <h1>Booking Confirmation</h1>
+
+    <p>Thank you for booking the @Model.Surfboard.Name!</p>
+
+    <ul>
+        <li><strong>Start Date:</strong> @Model.StartDate.ToShortDateString()</li>
+        <li><strong>End Date:</strong> @Model.EndDate.ToShortDateString()</li>
+        <li><strong>Total Price:</strong> €@Model.TotalPrice</li>
+    </ul>
+
+    <p>We look forward to seeing you ride the waves!</p>
+</div>

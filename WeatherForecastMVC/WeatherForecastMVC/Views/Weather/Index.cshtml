@@ -1,0 +1,23 @@
+﻿@model List<WeatherForecastMVC.Models.WeatherForecast>
+
+<h2>Weather Forecast</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Temperature (C)</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.TemperatureC</td>
+                <td>@item.Summary</td>
+            </tr>
+        }
+    </tbody>
+</table>

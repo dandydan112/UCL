@@ -1,0 +1,35 @@
+﻿@model SurfsUpDan.Models.Surfboard
+
+@{
+    ViewData["Title"] = "Surfboard Details";
+}
+
+<div class="container">
+    <h1>@Model.Name</h1>
+    <ul>
+        <li><strong>Length:</strong> @Model.Length feet</li>
+        <li><strong>Width:</strong> @Model.Width inches</li>
+        <li><strong>Thickness:</strong> @Model.Thickness inches</li>
+        <li><strong>Volume:</strong> @Model.Volume L</li>
+        <li><strong>Type:</strong> @Model.Type</li>
+        <li><strong>Price:</strong> €@Model.PricePerDay per day</li>
+        <li><strong>Equipment:</strong> @Model.Equipment</li>
+    </ul>
+
+    <h3>Book this surfboard</h3>
+    <form asp-action="Book" method="post">
+        <input type="hidden" name="surfboardId" value="@Model.SurfboardId" />
+
+        <div>
+            <label for="start-date">Start Date:</label>
+            <input type="date" name="startDate" required />
+        </div>
+
+        <div>
+            <label for="end-date">End Date:</label>
+            <input type="date" name="endDate" required />
+        </div>
+
+        <button type="submit">Book Now</button>
+    </form>
+</div>

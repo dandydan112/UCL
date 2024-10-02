@@ -1,0 +1,19 @@
+﻿@model List<Shirt>
+
+<h2>Shirts</h2>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var shirt in Model)
+    {
+        <tr>
+            <td>@shirt.Id</td>
+            <td>@shirt.Name</td>
+            <td>@shirt.Price</td>
+        </tr>
+    }
+</table>
