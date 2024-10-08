@@ -23,6 +23,9 @@ namespace WeatherForecast
                 app.UseSwaggerUI();
             }
 
+            // Min sigma custom made middleware
+            app.UseMiddleware<IPLoggingMiddleware>();
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
