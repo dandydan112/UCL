@@ -1,0 +1,33 @@
+﻿@page "/surfboards"
+
+@inject SurfBoardRepository SurfboardRepo
+
+<h3>Available Surfboards</h3>
+
+@if (surfboards == null || !surfboards.Any())
+{
+    <p>No surfboards available.</p>
+}
+else
+{
+    <ul>
+        @foreach (var surfboard in surfboards)
+        {
+            <li>
+                <strong>@surfboard.Name</strong><br />
+                Length: @surfboard.Length ft, Width: @surfboard.Width inches, Thickness: @surfboard.Thickness inches<br />
+                Volume: @surfboard.Volume liters, Price of Purchase: $@surfboard.PriceOfPurchase<br />
+                Equipment: @(string.IsNullOrEmpty(surfboard.Equipment) ? "None" : surfboard.Equipment)
+            </li>
+        }
+    </ul>
+}
+
+@code {
+    private List<Surfboard> surfboards;
+
+    protected override void OnInitialized()
+    {
+        surfboards = SurfboardRepo.GetSurfboards();
+    }
+}

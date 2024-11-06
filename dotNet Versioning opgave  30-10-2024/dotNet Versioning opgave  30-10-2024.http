@@ -1,0 +1,6 @@
+@dotNet_Versioning_opgave__30_10_2024_HostAddress = http://localhost:5215
+
+GET {{dotNet_Versioning_opgave__30_10_2024_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
