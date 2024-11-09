@@ -2,7 +2,7 @@
 
 @inject SurfBoardRepository SurfboardRepo
 
-<h3>Available Surfboards</h3>
+<h3>Surfboardzito</h3>
 
 @if (surfboards == null || !surfboards.Any())
 {
@@ -23,11 +23,14 @@ else
     </ul>
 }
 
+
+
 @code {
-    private List<Surfboard> surfboards;
+    private List<SurfsUpBlazor.Models.Surfboard> surfboards;
 
     protected override void OnInitialized()
     {
         surfboards = SurfboardRepo.GetSurfboards();
     }
+
 }

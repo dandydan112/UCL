@@ -7,13 +7,47 @@
 
 <p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="IncrementAndShowVideo">Click</button>
+
+@if (showVideoModal)
+{
+    <div class="modal-overlay" @onclick="SwitchVideo">
+        <div class="modal-content" @onclick:stopPropagation="true">
+            <iframe width="560" height="315"
+                    src="@currentVideoUrl"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+            <button class="btn btn-secondary mt-2" @onclick="SwitchVideo">close</button>
+        </div>
+    </div>
+}
+
 
 @code {
     private int currentCount = 0;
+    private bool showVideoModal = false;
+    private string currentVideoUrl;
+    private bool isFirstVideo = true;
 
-    private void IncrementCount()
+    private readonly string firstVideoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+    private readonly string secondVideoUrl = "https://www.youtube.com/watch?v=8ZxvCPzPHoo?autoplay=1";
+
+    private void IncrementAndShowVideo()
     {
         currentCount++;
+        currentVideoUrl = firstVideoUrl;
+        showVideoModal = true;
+    }
+
+    private void SwitchVideo()
+    {
+        currentVideoUrl = secondVideoUrl;
+    }
+
+    private void CloseVideoModal()
+    {
+        showVideoModal = false;
     }
 }
