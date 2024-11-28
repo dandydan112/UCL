@@ -1,0 +1,20 @@
+﻿@page "/games"
+@inject Arvefordeleren_CleanArchitecture.Application.UseCases.GetGamesUseCase GetGamesUseCase
+
+<h3>Game List</h3>
+
+<ul>
+    @foreach (var game in _games)
+    {
+        <li>@game.Name (@game.Genre)</li>
+    }
+</ul>
+
+@code {
+    private List<Arvefordeleren_CleanArchitecture.Domain.Entities.Game> _games = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _games = await GetGamesUseCase.ExecuteAsync();
+    }
+}
